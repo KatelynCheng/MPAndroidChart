@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
@@ -24,7 +26,7 @@ public class XAxisRendererHorizontalBarChart extends XAxisRenderer {
 
     protected BarChart mChart;
 
-    public XAxisRendererHorizontalBarChart(ViewPortHandler viewPortHandler, XAxis xAxis,
+    public XAxisRendererHorizontalBarChart(ViewPortHandler viewPortHandler, @Nullable XAxis xAxis,
             Transformer trans, BarChart chart) {
         super(viewPortHandler, xAxis, trans);
 

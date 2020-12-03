@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.highlight;
 
+import androidx.annotation.Nullable;
+
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarLineScatterCandleBubbleData;
 import com.github.mikephil.charting.data.DataSet;
@@ -11,9 +13,6 @@ import com.github.mikephil.charting.utils.MPPointD;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Philipp Jahoda on 21/07/15.
- */
 public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> implements IHighlighter
 {
 
@@ -31,7 +30,7 @@ public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> 
         this.mChart = chart;
     }
 
-    @Override
+    @Override@Nullable
     public Highlight getHighlight(float x, float y) {
 
         MPPointD pos = getValsForTouch(x, y);
@@ -65,6 +64,7 @@ public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> 
      * @param y
      * @return
      */
+    @Nullable
     protected Highlight getHighlightForX(float xVal, float x, float y) {
 
         List<Highlight> closestValues = getHighlightsAtXValue(xVal, x, y);
@@ -201,6 +201,7 @@ public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> 
      * @param minSelectionDistance
      * @return
      */
+    @Nullable
     public Highlight getClosestHighlightByPixel(List<Highlight> closestValues, float x, float y,
                                                 YAxis.AxisDependency axis, float minSelectionDistance) {
 

@@ -1,16 +1,11 @@
 
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 
-/**
- * Subclass of Entry that holds a value for one entry in a BubbleChart. Bubble
- * chart implementation: Copyright 2015 Pierre-Marc Airoldi Licensed under
- * Apache License 2.0
- *
- * @author Philipp Jahoda
- */
 @SuppressLint("ParcelCreator")
 public class BubbleEntry extends Entry {
 
@@ -37,7 +32,7 @@ public class BubbleEntry extends Entry {
      * @param size The size of the bubble.
      * @param data Spot for additional data this Entry represents.
      */
-    public BubbleEntry(float x, float y, float size, Object data) {
+    public BubbleEntry(float x, float y, float size, @Nullable Object data) {
         super(x, y, data);
         this.mSize = size;
     }

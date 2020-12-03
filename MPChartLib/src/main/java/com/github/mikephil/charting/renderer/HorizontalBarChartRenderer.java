@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.Paint.Align;
 import android.graphics.RectF;
@@ -24,14 +26,9 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.util.List;
 
-/**
- * Renderer for the HorizontalBarChart.
- *
- * @author Philipp Jahoda
- */
 public class HorizontalBarChartRenderer extends BarChartRenderer {
 
-    public HorizontalBarChartRenderer(BarDataProvider chart, ChartAnimator animator,
+    public HorizontalBarChartRenderer(BarDataProvider chart, @Nullable ChartAnimator animator,
                                       ViewPortHandler viewPortHandler) {
         super(chart, animator, viewPortHandler);
 

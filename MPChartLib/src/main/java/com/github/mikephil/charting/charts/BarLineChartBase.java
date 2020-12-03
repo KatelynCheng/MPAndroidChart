@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.charts;
 
+import androidx.annotation.Nullable;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -36,11 +38,6 @@ import com.github.mikephil.charting.utils.MPPointF;
 import com.github.mikephil.charting.utils.Transformer;
 import com.github.mikephil.charting.utils.Utils;
 
-/**
- * Base-class of LineChart, BarChart, ScatterChart and CandleStickChart.
- *
- * @author Philipp Jahoda
- */
 @SuppressLint("RtlHardcoded")
 public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<? extends
         IBarLineScatterCandleBubbleDataSet<? extends Entry>>>
@@ -87,8 +84,10 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     /**
      * paint object for the (by default) lightgrey background of the grid
      */
+    @Nullable
     protected Paint mGridBackgroundPaint;
 
+    @Nullable
     protected Paint mBorderPaint;
 
     /**
@@ -115,24 +114,34 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     /**
      * the listener for user drawing on the chart
      */
+    @Nullable
     protected OnDrawListener mDrawListener;
 
     /**
      * the object representing the labels on the left y-axis
      */
+    @Nullable
     protected YAxis mAxisLeft;
 
     /**
      * the object representing the labels on the right y-axis
      */
+    @Nullable
     protected YAxis mAxisRight;
 
+    @Nullable
     protected YAxisRenderer mAxisRendererLeft;
+
+    @Nullable
     protected YAxisRenderer mAxisRendererRight;
 
+    @Nullable
     protected Transformer mLeftAxisTransformer;
+
+    @Nullable
     protected Transformer mRightAxisTransformer;
 
+    @Nullable
     protected XAxisRenderer mXAxisRenderer;
 
     // /** the approximator object used for data filtering */
@@ -560,6 +569,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      *
      * @return
      */
+    @Nullable
     public Transformer getTransformer(AxisDependency which) {
         if (which == AxisDependency.LEFT)
             return mLeftAxisTransformer;
@@ -1027,6 +1037,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      *
      * @return
      */
+    @Nullable
     public OnDrawListener getDrawListener() {
         return mDrawListener;
     }
@@ -1041,6 +1052,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      * @param e
      * @return
      */
+    @Nullable
     public MPPointF getPosition(Entry e, AxisDependency axis) {
 
         if (e == null)
@@ -1352,6 +1364,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      * @param y
      * @return
      */
+    @Nullable
     public Entry getEntryByTouchPoint(float x, float y) {
         Highlight h = getHighlightByTouchPoint(x, y);
         if (h != null) {
@@ -1367,6 +1380,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      * @param y
      * @return
      */
+    @Nullable
     public IBarLineScatterCandleBubbleDataSet getDataSetByTouchPoint(float x, float y) {
         Highlight h = getHighlightByTouchPoint(x, y);
         if (h != null) {
@@ -1457,6 +1471,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      *
      * @return
      */
+    @Nullable
     public YAxis getAxisLeft() {
         return mAxisLeft;
     }
@@ -1467,6 +1482,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      *
      * @return
      */
+    @Nullable
     public YAxis getAxisRight() {
         return mAxisRight;
     }
@@ -1478,7 +1494,8 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      * @param axis
      * @return
      */
-    public YAxis getAxis(AxisDependency axis) {
+    @Nullable
+    public YAxis getAxis(@Nullable AxisDependency axis) {
         if (axis == AxisDependency.LEFT)
             return mAxisLeft;
         else
@@ -1538,6 +1555,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         return mViewPortHandler.hasNoDragOffset();
     }
 
+    @Nullable
     public XAxisRenderer getRendererXAxis() {
         return mXAxisRenderer;
     }
@@ -1551,6 +1569,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         mXAxisRenderer = xAxisRenderer;
     }
 
+    @Nullable
     public YAxisRenderer getRendererLeftYAxis() {
         return mAxisRendererLeft;
     }
@@ -1564,6 +1583,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         mAxisRendererLeft = rendererLeftYAxis;
     }
 
+    @Nullable
     public YAxisRenderer getRendererRightYAxis() {
         return mAxisRendererRight;
     }
@@ -1631,7 +1651,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         }
     }
 
-    @Override
+    @Override@Nullable
     public Paint getPaint(int which) {
         Paint p = super.getPaint(which);
         if (p != null)

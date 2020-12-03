@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -40,12 +42,14 @@ public class LineChartRenderer extends LineRadarRenderer {
      * Bitmap object used for drawing the paths (otherwise they are too long if
      * rendered directly on the canvas)
      */
+    @Nullable
     protected WeakReference<Bitmap> mDrawBitmap;
 
     /**
      * on this canvas, the paths are rendered, it is initialized with the
      * pathBitmap
      */
+    @Nullable
     protected Canvas mBitmapCanvas;
 
     /**
@@ -56,7 +60,7 @@ public class LineChartRenderer extends LineRadarRenderer {
     protected Path cubicPath = new Path();
     protected Path cubicFillPath = new Path();
 
-    public LineChartRenderer(LineDataProvider chart, ChartAnimator animator,
+    public LineChartRenderer(LineDataProvider chart, @Nullable ChartAnimator animator,
                              ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
         mChart = chart;
@@ -261,7 +265,7 @@ public class LineChartRenderer extends LineRadarRenderer {
         mRenderPaint.setPathEffect(null);
     }
 
-    protected void drawCubicFill(Canvas c, ILineDataSet dataSet, Path spline, Transformer trans, XBounds bounds) {
+    protected void drawCubicFill(@Nullable Canvas c, ILineDataSet dataSet, Path spline, Transformer trans, XBounds bounds) {
 
         float fillMin = dataSet.getFillFormatter()
                 .getFillLinePosition(dataSet, mChart);
@@ -766,6 +770,7 @@ public class LineChartRenderer extends LineRadarRenderer {
 
         private Path mCirclePathBuffer = new Path();
 
+        @Nullable
         private Bitmap[] circleBitmaps;
 
         /**

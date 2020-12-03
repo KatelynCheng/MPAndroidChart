@@ -1,26 +1,25 @@
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 
 import com.github.mikephil.charting.highlight.Range;
 
-/**
- * Entry class for the BarChart. (especially stacked bars)
- *
- * @author Philipp Jahoda
- */
 @SuppressLint("ParcelCreator")
 public class BarEntry extends Entry {
 
     /**
      * the values the stacked barchart holds
      */
+    @Nullable
     private float[] mYVals;
 
     /**
      * the ranges for the individual stack values - automatically calculated
      */
+    @Nullable
     private Range[] mRanges;
 
     /**
@@ -50,7 +49,7 @@ public class BarEntry extends Entry {
      * @param y
      * @param data - Spot for additional data this Entry represents.
      */
-    public BarEntry(float x, float y, Object data) {
+    public BarEntry(float x, float y, @Nullable Object data) {
         super(x, y, data);
     }
 
@@ -153,6 +152,7 @@ public class BarEntry extends Entry {
      *
      * @return
      */
+    @Nullable
     public float[] getYVals() {
         return mYVals;
     }
@@ -162,7 +162,7 @@ public class BarEntry extends Entry {
      *
      * @param vals
      */
-    public void setVals(float[] vals) {
+    public void setVals(@Nullable float[] vals) {
         setY(calcSum(vals));
         mYVals = vals;
         calcPosNegSum();
@@ -184,6 +184,7 @@ public class BarEntry extends Entry {
      *
      * @return
      */
+    @Nullable
     public Range[] getRanges() {
         return mRanges;
     }
@@ -267,7 +268,7 @@ public class BarEntry extends Entry {
      * @param vals
      * @return
      */
-    private static float calcSum(float[] vals) {
+    private static float calcSum(@Nullable float[] vals) {
 
         if (vals == null)
             return 0f;

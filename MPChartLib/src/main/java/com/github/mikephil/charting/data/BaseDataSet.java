@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -16,21 +18,18 @@ import com.github.mikephil.charting.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Philipp Jahoda on 21/10/15.
- * This is the base dataset of all DataSets. It's purpose is to implement critical methods
- * provided by the IDataSet interface.
- */
 public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     /**
      * List representing all colors that are used for this DataSet
      */
+    @Nullable
     protected List<Integer> mColors = null;
 
     /**
      * List representing all colors that are used for drawing the actual values for this DataSet
      */
+    @Nullable
     protected List<Integer> mValueColors = null;
 
     /**
@@ -51,16 +50,20 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
     /**
      * custom formatter that is used instead of the auto-formatter if set
      */
+    @Nullable
     protected transient IValueFormatter mValueFormatter;
 
     /**
      * the typeface used for the value text
      */
+    @Nullable
     protected Typeface mValueTypeface;
 
     private Legend.LegendForm mForm = Legend.LegendForm.DEFAULT;
     private float mFormSize = Float.NaN;
     private float mFormLineWidth = Float.NaN;
+
+    @Nullable
     private DashPathEffect mFormLineDashEffect = null;
 
     /**
@@ -122,11 +125,12 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
      * ###### ###### COLOR GETTING RELATED METHODS ##### ######
      */
 
-    @Override
+    @Override@Nullable
     public List<Integer> getColors() {
         return mColors;
     }
 
+    @Nullable
     public List<Integer> getValueColors() {
         return mValueColors;
     }
@@ -282,7 +286,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
             mValueFormatter = f;
     }
 
-    @Override
+    @Override@Nullable
     public IValueFormatter getValueFormatter() {
         if (needsFormatter())
             return Utils.getDefaultValueFormatter();
@@ -325,7 +329,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
         return mValueColors.get(index % mValueColors.size());
     }
 
-    @Override
+    @Override@Nullable
     public Typeface getValueTypeface() {
         return mValueTypeface;
     }
@@ -366,7 +370,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
         mFormLineDashEffect = dashPathEffect;
     }
 
-    @Override
+    @Override@Nullable
     public DashPathEffect getFormLineDashEffect() {
         return mFormLineDashEffect;
     }

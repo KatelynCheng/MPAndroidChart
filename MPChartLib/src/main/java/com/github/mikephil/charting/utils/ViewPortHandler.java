@@ -1,16 +1,12 @@
 
 package com.github.mikephil.charting.utils;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.view.View;
 
-/**
- * Class that contains information about the charts current viewport settings, including offsets, scale & translation
- * levels, ...
- *
- * @author Philipp Jahoda
- */
 public class ViewPortHandler {
 
     /**
@@ -392,7 +388,7 @@ public class ViewPortHandler {
      * @param view
      * @return save
      */
-    public void centerViewPort(final float[] transformedPts, final View view) {
+    public void centerViewPort(final float[] transformedPts, @Nullable final View view) {
 
         Matrix save = mCenterViewPortMatrixBuffer;
         save.reset();
@@ -417,7 +413,7 @@ public class ViewPortHandler {
      * @param newMatrix
      * @return
      */
-    public Matrix refresh(Matrix newMatrix, View chart, boolean invalidate) {
+    public Matrix refresh(Matrix newMatrix, @Nullable View chart, boolean invalidate) {
 
         mMatrixTouch.set(newMatrix);
 

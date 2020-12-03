@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.charts;
 
+import androidx.annotation.Nullable;
+
 import android.content.Context;
 import android.util.AttributeSet;
 
@@ -8,13 +10,6 @@ import com.github.mikephil.charting.data.ScatterData;
 import com.github.mikephil.charting.interfaces.dataprovider.ScatterDataProvider;
 import com.github.mikephil.charting.renderer.ScatterChartRenderer;
 
-/**
- * The ScatterChart. Draws dots, triangles, squares and custom shapes into the
- * Chart-View. CIRCLE and SCQUARE offer the best performance, TRIANGLE has the
- * worst performance.
- *
- * @author Philipp Jahoda
- */
 public class ScatterChart extends BarLineChartBase<ScatterData> implements ScatterDataProvider {
 
     public ScatterChart(Context context) {
@@ -40,7 +35,7 @@ public class ScatterChart extends BarLineChartBase<ScatterData> implements Scatt
         getXAxis().setSpaceMax(0.5f);
     }
 
-    @Override
+    @Override@Nullable
     public ScatterData getScatterData() {
         return mData;
     }

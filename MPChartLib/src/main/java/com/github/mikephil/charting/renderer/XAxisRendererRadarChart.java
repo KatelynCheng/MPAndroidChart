@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.PointF;
 
@@ -14,7 +16,7 @@ public class XAxisRendererRadarChart extends XAxisRenderer {
 
     private RadarChart mChart;
 
-    public XAxisRendererRadarChart(ViewPortHandler viewPortHandler, XAxis xAxis, RadarChart chart) {
+    public XAxisRendererRadarChart(ViewPortHandler viewPortHandler, @Nullable XAxis xAxis, RadarChart chart) {
         super(viewPortHandler, xAxis, null);
 
         mChart = chart;

@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.jobs;
 
+import androidx.annotation.Nullable;
+
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
@@ -12,9 +14,6 @@ import com.github.mikephil.charting.utils.ObjectPool;
 import com.github.mikephil.charting.utils.Transformer;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
-/**
- * Created by Philipp Jahoda on 19/02/16.
- */
 @SuppressLint("NewApi")
 public class AnimatedZoomJob extends AnimatedViewPortJob implements Animator.AnimatorListener {
 
@@ -24,7 +23,7 @@ public class AnimatedZoomJob extends AnimatedViewPortJob implements Animator.Ani
         pool = ObjectPool.create(8, new AnimatedZoomJob(null,null,null,null,0,0,0,0,0,0,0,0,0,0));
     }
 
-    public static AnimatedZoomJob getInstance(ViewPortHandler viewPortHandler, View v, Transformer trans, YAxis axis, float xAxisRange, float scaleX, float scaleY, float xOrigin, float yOrigin, float zoomCenterX, float zoomCenterY, float zoomOriginX, float zoomOriginY, long duration) {
+    public static AnimatedZoomJob getInstance(ViewPortHandler viewPortHandler, View v, @Nullable Transformer trans, @Nullable YAxis axis, float xAxisRange, float scaleX, float scaleY, float xOrigin, float yOrigin, float zoomCenterX, float zoomCenterY, float zoomOriginX, float zoomOriginY, long duration) {
         AnimatedZoomJob result = pool.get();
         result.mViewPortHandler = viewPortHandler;
         result.xValue = scaleX;
@@ -46,12 +45,13 @@ public class AnimatedZoomJob extends AnimatedViewPortJob implements Animator.Ani
     protected float zoomCenterX;
     protected float zoomCenterY;
 
+    @Nullable
     protected YAxis yAxis;
 
     protected float xAxisRange;
 
     @SuppressLint("NewApi")
-    public AnimatedZoomJob(ViewPortHandler viewPortHandler, View v, Transformer trans, YAxis axis, float xAxisRange, float scaleX, float scaleY, float xOrigin, float yOrigin, float zoomCenterX, float zoomCenterY, float zoomOriginX, float zoomOriginY, long duration) {
+    public AnimatedZoomJob(@Nullable ViewPortHandler viewPortHandler, @Nullable View v, @Nullable Transformer trans, @Nullable YAxis axis, float xAxisRange, float scaleX, float scaleY, float xOrigin, float yOrigin, float zoomCenterX, float zoomCenterY, float zoomOriginX, float zoomOriginY, long duration) {
         super(viewPortHandler, scaleX, scaleY, trans, v, xOrigin, yOrigin, duration);
 
         this.zoomCenterX = zoomCenterX;

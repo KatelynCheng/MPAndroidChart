@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
@@ -30,7 +32,7 @@ public class CandleStickChartRenderer extends LineScatterCandleRadarRenderer {
     private float[] mOpenBuffers = new float[4];
     private float[] mCloseBuffers = new float[4];
 
-    public CandleStickChartRenderer(CandleDataProvider chart, ChartAnimator animator,
+    public CandleStickChartRenderer(CandleDataProvider chart, @Nullable ChartAnimator animator,
                                     ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
         mChart = chart;

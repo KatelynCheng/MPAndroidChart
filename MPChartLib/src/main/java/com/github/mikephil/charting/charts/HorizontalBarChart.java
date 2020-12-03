@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.charts;
 
+import androidx.annotation.Nullable;
+
 import android.content.Context;
 import android.graphics.RectF;
 import android.util.AttributeSet;
@@ -20,12 +22,6 @@ import com.github.mikephil.charting.utils.MPPointF;
 import com.github.mikephil.charting.utils.TransformerHorizontalBarChart;
 import com.github.mikephil.charting.utils.Utils;
 
-/**
- * BarChart with horizontal bar orientation. In this implementation, x- and y-axis are switched, meaning the YAxis class
- * represents the horizontal values and the XAxis class represents the vertical values.
- *
- * @author Philipp Jahoda
- */
 public class HorizontalBarChart extends BarChart {
 
     public HorizontalBarChart(Context context) {
@@ -252,7 +248,7 @@ public class HorizontalBarChart extends BarChart {
      * @param axis
      * @return
      */
-    @Override
+    @Override@Nullable
     public MPPointF getPosition(Entry e, AxisDependency axis) {
 
         if (e == null)
@@ -275,7 +271,7 @@ public class HorizontalBarChart extends BarChart {
      * @param y
      * @return
      */
-    @Override
+    @Override@Nullable
     public Highlight getHighlightByTouchPoint(float x, float y) {
 
         if (mData == null) {

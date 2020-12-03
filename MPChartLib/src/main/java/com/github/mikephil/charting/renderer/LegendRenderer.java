@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
@@ -564,7 +566,7 @@ public class LegendRenderer extends Renderer {
      * @param y
      * @param label the label to draw
      */
-    protected void drawLabel(Canvas c, float x, float y, String label) {
+    protected void drawLabel(Canvas c, float x, float y, @Nullable String label) {
         c.drawText(label, x, y, mLegendLabelPaint);
     }
 }

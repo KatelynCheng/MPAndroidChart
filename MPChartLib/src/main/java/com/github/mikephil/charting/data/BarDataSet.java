@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Color;
 
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
@@ -41,6 +43,7 @@ public class BarDataSet extends BarLineScatterCandleBubbleDataSet<BarEntry> impl
      */
     private String[] mStackLabels = new String[]{};
 
+    @Nullable
     protected List<Fill> mFills = null;
 
     public BarDataSet(List<BarEntry> yVals, String label) {
@@ -72,7 +75,7 @@ public class BarDataSet extends BarLineScatterCandleBubbleDataSet<BarEntry> impl
         barDataSet.mHighLightAlpha = mHighLightAlpha;
     }
 
-    @Override
+    @Override@Nullable
     public List<Fill> getFills() {
         return mFills;
     }
@@ -86,7 +89,7 @@ public class BarDataSet extends BarLineScatterCandleBubbleDataSet<BarEntry> impl
      * This method is deprecated.
      * Use getFills() instead.
      */
-    @Deprecated
+    @Deprecated@Nullable
     public List<Fill> getGradients() {
         return mFills;
     }

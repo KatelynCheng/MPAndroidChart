@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -28,7 +30,7 @@ public class RadarChartRenderer extends LineRadarRenderer {
     protected Paint mWebPaint;
     protected Paint mHighlightCirclePaint;
 
-    public RadarChartRenderer(RadarChart chart, ChartAnimator animator,
+    public RadarChartRenderer(RadarChart chart, @Nullable ChartAnimator animator,
                               ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
         mChart = chart;

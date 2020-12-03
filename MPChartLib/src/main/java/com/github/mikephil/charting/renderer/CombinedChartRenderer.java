@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 
 import com.github.mikephil.charting.animation.ChartAnimator;
@@ -16,9 +18,6 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Renderer class that is responsible for rendering multiple different data-types.
- */
 public class CombinedChartRenderer extends DataRenderer {
 
     /**
@@ -28,7 +27,7 @@ public class CombinedChartRenderer extends DataRenderer {
 
     protected WeakReference<Chart> mChart;
 
-    public CombinedChartRenderer(CombinedChart chart, ChartAnimator animator, ViewPortHandler viewPortHandler) {
+    public CombinedChartRenderer(CombinedChart chart, @Nullable ChartAnimator animator, ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
         mChart = new WeakReference<Chart>(chart);
         createRenderers();
@@ -145,6 +144,7 @@ public class CombinedChartRenderer extends DataRenderer {
      * @param index
      * @return
      */
+    @Nullable
     public DataRenderer getSubRenderer(int index) {
         if (index >= mRenderers.size() || index < 0)
             return null;

@@ -1,21 +1,12 @@
 package com.github.mikephil.charting.components;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.github.mikephil.charting.utils.Utils;
 
-/**
- * Class representing the y-axis labels settings and its entries. Only use the setter methods to
- * modify it. Do not
- * access public variables directly. Be aware that not all features the YLabels class provides
- * are suitable for the
- * RadarChart. Customizations that affect the value range of the axis need to be applied before
- * setting data for the
- * chart.
- *
- * @author Philipp Jahoda
- */
 public class YAxis extends AxisBase {
 
     /**
@@ -340,7 +331,7 @@ public class YAxis extends AxisBase {
      * @param p
      * @return
      */
-    public float getRequiredWidthSpace(Paint p) {
+    public float getRequiredWidthSpace(@Nullable Paint p) {
 
         p.setTextSize(mTextSize);
 
@@ -367,7 +358,7 @@ public class YAxis extends AxisBase {
      * @param p
      * @return
      */
-    public float getRequiredHeightSpace(Paint p) {
+    public float getRequiredHeightSpace(@Nullable Paint p) {
 
         p.setTextSize(mTextSize);
 

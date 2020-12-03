@@ -1,13 +1,10 @@
 
 package com.github.mikephil.charting.highlight;
 
+import androidx.annotation.Nullable;
+
 import com.github.mikephil.charting.components.YAxis;
 
-/**
- * Contains information needed to determine the highlighted value.
- *
- * @author Philipp Jahoda
- */
 public class Highlight {
 
     /**
@@ -48,6 +45,7 @@ public class Highlight {
     /**
      * the axis the highlighted value belongs to
      */
+    @Nullable
     private YAxis.AxisDependency axis;
 
     /**
@@ -86,7 +84,7 @@ public class Highlight {
      * @param y            the y-value of the highlighted value
      * @param dataSetIndex the index of the DataSet the highlighted value belongs to
      */
-    public Highlight(float x, float y, float xPx, float yPx, int dataSetIndex, YAxis.AxisDependency axis) {
+    public Highlight(float x, float y, float xPx, float yPx, int dataSetIndex, @Nullable YAxis.AxisDependency axis) {
         this.mX = x;
         this.mY = y;
         this.mXPx = xPx;
@@ -104,7 +102,7 @@ public class Highlight {
      * @param stackIndex   references which value of a stacked-bar entry has been
      *                     selected
      */
-    public Highlight(float x, float y, float xPx, float yPx, int dataSetIndex, int stackIndex, YAxis.AxisDependency axis) {
+    public Highlight(float x, float y, float xPx, float yPx, int dataSetIndex, int stackIndex, @Nullable YAxis.AxisDependency axis) {
         this(x, y, xPx, yPx, dataSetIndex, axis);
         this.mStackIndex = stackIndex;
     }
@@ -182,6 +180,7 @@ public class Highlight {
      *
      * @return
      */
+    @Nullable
     public YAxis.AxisDependency getAxis() {
         return axis;
     }
@@ -222,7 +221,7 @@ public class Highlight {
      * @param h
      * @return
      */
-    public boolean equalTo(Highlight h) {
+    public boolean equalTo(@Nullable Highlight h) {
 
         if (h == null)
             return false;

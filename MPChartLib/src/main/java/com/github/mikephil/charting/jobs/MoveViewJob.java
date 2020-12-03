@@ -1,15 +1,14 @@
 
 package com.github.mikephil.charting.jobs;
 
+import androidx.annotation.Nullable;
+
 import android.view.View;
 
 import com.github.mikephil.charting.utils.ObjectPool;
 import com.github.mikephil.charting.utils.Transformer;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
-/**
- * Created by Philipp Jahoda on 19/02/16.
- */
 public class MoveViewJob extends ViewPortJob {
 
     private static ObjectPool<MoveViewJob> pool;
@@ -19,7 +18,7 @@ public class MoveViewJob extends ViewPortJob {
         pool.setReplenishPercentage(0.5f);
     }
 
-    public static MoveViewJob getInstance(ViewPortHandler viewPortHandler, float xValue, float yValue, Transformer trans, View v){
+    public static MoveViewJob getInstance(ViewPortHandler viewPortHandler, float xValue, float yValue, @Nullable Transformer trans, View v){
         MoveViewJob result = pool.get();
         result.mViewPortHandler = viewPortHandler;
         result.xValue = xValue;
@@ -33,7 +32,7 @@ public class MoveViewJob extends ViewPortJob {
         pool.recycle(instance);
     }
 
-    public MoveViewJob(ViewPortHandler viewPortHandler, float xValue, float yValue, Transformer trans, View v) {
+    public MoveViewJob(@Nullable ViewPortHandler viewPortHandler, float xValue, float yValue, @Nullable Transformer trans, @Nullable View v) {
         super(viewPortHandler, xValue, yValue, trans, v);
     }
 

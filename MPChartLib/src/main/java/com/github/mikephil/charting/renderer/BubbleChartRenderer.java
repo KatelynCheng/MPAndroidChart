@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
@@ -19,15 +21,11 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.util.List;
 
-/**
- * Bubble chart implementation: Copyright 2015 Pierre-Marc Airoldi Licensed
- * under Apache License 2.0 Ported by Daniel Cohen Gindi
- */
 public class BubbleChartRenderer extends BarLineScatterCandleBubbleRenderer {
 
     protected BubbleDataProvider mChart;
 
-    public BubbleChartRenderer(BubbleDataProvider chart, ChartAnimator animator,
+    public BubbleChartRenderer(BubbleDataProvider chart, @Nullable ChartAnimator animator,
                                ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
         mChart = chart;

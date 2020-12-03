@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import com.github.mikephil.charting.animation.ChartAnimator;
 import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.data.Entry;
@@ -8,9 +10,6 @@ import com.github.mikephil.charting.interfaces.datasets.IBarLineScatterCandleBub
 import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
-/**
- * Created by Philipp Jahoda on 09/06/16.
- */
 public abstract class BarLineScatterCandleBubbleRenderer extends DataRenderer {
 
     /**
@@ -18,7 +17,7 @@ public abstract class BarLineScatterCandleBubbleRenderer extends DataRenderer {
      */
     protected XBounds mXBounds = new XBounds();
 
-    public BarLineScatterCandleBubbleRenderer(ChartAnimator animator, ViewPortHandler viewPortHandler) {
+    public BarLineScatterCandleBubbleRenderer(@Nullable ChartAnimator animator, ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
     }
 
@@ -28,7 +27,7 @@ public abstract class BarLineScatterCandleBubbleRenderer extends DataRenderer {
      * @param set
      * @return
      */
-    protected boolean shouldDrawValues(IDataSet set) {
+    protected boolean shouldDrawValues(@Nullable IDataSet set) {
         return set.isVisible() && (set.isDrawValuesEnabled() || set.isDrawIconsEnabled());
     }
 

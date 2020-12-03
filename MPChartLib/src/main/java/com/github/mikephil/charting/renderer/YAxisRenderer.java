@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -20,11 +22,13 @@ import java.util.List;
 
 public class YAxisRenderer extends AxisRenderer {
 
+    @Nullable
     protected YAxis mYAxis;
 
+    @Nullable
     protected Paint mZeroLinePaint;
 
-    public YAxisRenderer(ViewPortHandler viewPortHandler, YAxis yAxis, Transformer trans) {
+    public YAxisRenderer(ViewPortHandler viewPortHandler, @Nullable YAxis yAxis, @Nullable Transformer trans) {
         super(viewPortHandler, trans, yAxis);
 
         this.mYAxis = yAxis;

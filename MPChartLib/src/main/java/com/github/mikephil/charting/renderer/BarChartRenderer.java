@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -32,12 +34,13 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
      */
     protected RectF mBarRect = new RectF();
 
+    @Nullable
     protected BarBuffer[] mBarBuffers;
 
     protected Paint mShadowPaint;
     protected Paint mBarBorderPaint;
 
-    public BarChartRenderer(BarDataProvider chart, ChartAnimator animator,
+    public BarChartRenderer(BarDataProvider chart, @Nullable ChartAnimator animator,
                             ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
         this.mChart = chart;

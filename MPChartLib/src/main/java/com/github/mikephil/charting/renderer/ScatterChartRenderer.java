@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -24,7 +26,7 @@ public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
 
     protected ScatterDataProvider mChart;
 
-    public ScatterChartRenderer(ScatterDataProvider chart, ChartAnimator animator, ViewPortHandler viewPortHandler) {
+    public ScatterChartRenderer(ScatterDataProvider chart, @Nullable ChartAnimator animator, ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
         mChart = chart;
     }

@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.components;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 
@@ -11,13 +13,6 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Class representing the legend of the chart. The legend will contain one entry
- * per color and DataSet. Multiple colors in one DataSet are grouped together.
- * The legend object is NOT available before setting data to the chart.
- *
- * @author Philipp Jahoda
- */
 public class Legend extends ComponentBase {
 
     public enum LegendForm {
@@ -77,6 +72,7 @@ public class Legend extends ComponentBase {
      * Entries that will be appended to the end of the auto calculated entries after calculating the legend.
      * (if the legend has already been calculated, you will need to call notifyDataSetChanged() to let the changes take effect)
      */
+    @Nullable
     private LegendEntry[] mExtraEntries;
 
     /**
@@ -113,6 +109,7 @@ public class Legend extends ComponentBase {
     /**
      * Line dash path effect used for shapes that consist of lines.
      */
+    @Nullable
     private DashPathEffect mFormLineDashEffect = null;
 
     /**
@@ -235,6 +232,7 @@ public class Legend extends ComponentBase {
         return max;
     }
 
+    @Nullable
     public LegendEntry[] getExtraEntries() {
 
         return mExtraEntries;
@@ -478,6 +476,7 @@ public class Legend extends ComponentBase {
     /**
      * @return The line dash path effect used for shapes that consist of lines.
      */
+    @Nullable
     public DashPathEffect getFormLineDashEffect() {
         return mFormLineDashEffect;
     }

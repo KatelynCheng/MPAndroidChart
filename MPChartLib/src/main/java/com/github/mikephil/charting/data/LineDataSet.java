@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -25,6 +27,7 @@ public class LineDataSet extends LineRadarDataSet<Entry> implements ILineDataSet
     /**
      * List representing all colors that are used for the circles
      */
+    @Nullable
     private List<Integer> mCircleColors = null;
 
     /**
@@ -50,6 +53,7 @@ public class LineDataSet extends LineRadarDataSet<Entry> implements ILineDataSet
     /**
      * the path effect of this DataSet that makes dashed lines possible
      */
+    @Nullable
     private DashPathEffect mDashPathEffect = null;
 
     /**
@@ -236,7 +240,7 @@ public class LineDataSet extends LineRadarDataSet<Entry> implements ILineDataSet
         return mDashPathEffect == null ? false : true;
     }
 
-    @Override
+    @Override@Nullable
     public DashPathEffect getDashPathEffect() {
         return mDashPathEffect;
     }
@@ -275,6 +279,7 @@ public class LineDataSet extends LineRadarDataSet<Entry> implements ILineDataSet
      *
      * @return
      */
+    @Nullable
     public List<Integer> getCircleColors() {
         return mCircleColors;
     }

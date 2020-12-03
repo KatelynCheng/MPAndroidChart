@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
@@ -20,7 +22,7 @@ import java.util.List;
 
 public class YAxisRendererHorizontalBarChart extends YAxisRenderer {
 
-    public YAxisRendererHorizontalBarChart(ViewPortHandler viewPortHandler, YAxis yAxis,
+    public YAxisRendererHorizontalBarChart(ViewPortHandler viewPortHandler, @Nullable YAxis yAxis,
                                            Transformer trans) {
         super(viewPortHandler, yAxis, trans);
 
