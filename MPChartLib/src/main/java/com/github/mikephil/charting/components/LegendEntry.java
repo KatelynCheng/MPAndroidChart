@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.components;
 
+import androidx.annotation.Nullable;
+
 
 import android.graphics.DashPathEffect;
 
@@ -19,11 +21,11 @@ public class LegendEntry {
      * @param formLineDashEffect Set to nil to use the legend's default.
      * @param formColor The color for drawing the form.
      */
-    public LegendEntry(String label,
+    public LegendEntry(@Nullable String label,
                        Legend.LegendForm form,
                        float formSize,
                        float formLineWidth,
-                       DashPathEffect formLineDashEffect,
+                       @Nullable DashPathEffect formLineDashEffect,
                        int formColor)
     {
         this.label = label;
@@ -38,6 +40,7 @@ public class LegendEntry {
      * The legend entry text.
      * A `null` label will start a group.
      */
+    @Nullable
     public String label;
 
     /**
@@ -68,6 +71,7 @@ public class LegendEntry {
      *
      * Set to null to use the legend's default
      */
+    @Nullable
     public DashPathEffect formLineDashEffect = null;
 
     /**

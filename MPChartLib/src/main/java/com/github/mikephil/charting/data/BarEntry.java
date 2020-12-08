@@ -1,15 +1,12 @@
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 
 import com.github.mikephil.charting.highlight.Range;
 
-/**
- * Entry class for the BarChart. (especially stacked bars)
- *
- * @author Philipp Jahoda
- */
 @SuppressLint("ParcelCreator")
 public class BarEntry extends Entry {
 
@@ -21,6 +18,7 @@ public class BarEntry extends Entry {
     /**
      * the ranges for the individual stack values - automatically calculated
      */
+    @Nullable
     private Range[] mRanges;
 
     /**

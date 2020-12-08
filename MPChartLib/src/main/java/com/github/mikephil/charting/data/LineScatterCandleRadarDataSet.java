@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.DashPathEffect;
 
 import com.github.mikephil.charting.interfaces.datasets.ILineScatterCandleRadarDataSet;
@@ -7,9 +9,6 @@ import com.github.mikephil.charting.utils.Utils;
 
 import java.util.List;
 
-/**
- * Created by Philipp Jahoda on 11/07/15.
- */
 public abstract class LineScatterCandleRadarDataSet<T extends Entry> extends BarLineScatterCandleBubbleDataSet<T> implements ILineScatterCandleRadarDataSet<T> {
 
     protected boolean mDrawVerticalHighlightIndicator = true;
@@ -19,6 +18,7 @@ public abstract class LineScatterCandleRadarDataSet<T extends Entry> extends Bar
     protected float mHighlightLineWidth = 0.5f;
 
     /** the path effect for dashed highlight-lines */
+    @Nullable
     protected DashPathEffect mHighlightDashPathEffect = null;
 
 

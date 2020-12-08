@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -40,6 +42,7 @@ public class LineChartRenderer extends LineRadarRenderer {
      * Bitmap object used for drawing the paths (otherwise they are too long if
      * rendered directly on the canvas)
      */
+    @Nullable
     protected WeakReference<Bitmap> mDrawBitmap;
 
     /**

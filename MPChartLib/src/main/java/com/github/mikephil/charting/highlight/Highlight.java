@@ -1,13 +1,10 @@
 
 package com.github.mikephil.charting.highlight;
 
+import androidx.annotation.Nullable;
+
 import com.github.mikephil.charting.components.YAxis;
 
-/**
- * Contains information needed to determine the highlighted value.
- *
- * @author Philipp Jahoda
- */
 public class Highlight {
 
     /**
@@ -48,6 +45,7 @@ public class Highlight {
     /**
      * the axis the highlighted value belongs to
      */
+    @Nullable
     private YAxis.AxisDependency axis;
 
     /**

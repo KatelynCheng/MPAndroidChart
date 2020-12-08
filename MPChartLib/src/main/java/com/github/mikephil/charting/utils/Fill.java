@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.utils;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
@@ -8,7 +10,6 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 public class Fill
 {
@@ -33,6 +34,7 @@ public class Fill
     @Nullable
     private Integer mColor = null;
 
+    @Nullable
     private Integer mFinalColor = null;
 
     /**
@@ -120,6 +122,7 @@ public class Fill
         this.mGradientColors = colors;
     }
 
+    @Nullable
     public float[] getGradientPositions()
     {
         return mGradientPositions;

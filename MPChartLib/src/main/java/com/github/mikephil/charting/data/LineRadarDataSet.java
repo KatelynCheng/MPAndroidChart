@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -10,11 +12,6 @@ import com.github.mikephil.charting.utils.Utils;
 
 import java.util.List;
 
-/**
- * Base dataset for line and radar DataSets.
- *
- * @author Philipp Jahoda
- */
 public abstract class LineRadarDataSet<T extends Entry> extends LineScatterCandleRadarDataSet<T> implements ILineRadarDataSet<T> {
 
     // TODO: Move to using `Fill` class
@@ -26,6 +23,7 @@ public abstract class LineRadarDataSet<T extends Entry> extends LineScatterCandl
     /**
      * the drawable to be used for filling the line surface
      */
+    @Nullable
     protected Drawable mFillDrawable;
 
     /**

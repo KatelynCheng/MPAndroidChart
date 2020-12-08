@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.renderer;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -57,6 +59,8 @@ public class PieChartRenderer extends DataRenderer {
     private Paint mEntryLabelsPaint;
 
     private StaticLayout mCenterTextLayout;
+
+    @Nullable
     private CharSequence mCenterTextLastValue;
     private RectF mCenterTextLastBounds = new RectF();
     private RectF[] mRectBuffer = {new RectF(), new RectF(), new RectF()};
@@ -64,6 +68,7 @@ public class PieChartRenderer extends DataRenderer {
     /**
      * Bitmap for drawing the center hole
      */
+    @Nullable
     protected WeakReference<Bitmap> mDrawBitmap;
 
     protected Canvas mBitmapCanvas;

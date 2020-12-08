@@ -1,16 +1,13 @@
 
 package com.github.mikephil.charting.components;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Color;
 import android.graphics.Typeface;
 
 import com.github.mikephil.charting.utils.Utils;
 
-/**
- * This class encapsulates everything both Axis, Legend and LimitLines have in common.
- *
- * @author Philipp Jahoda
- */
 public abstract class ComponentBase {
 
     /**
@@ -31,6 +28,7 @@ public abstract class ComponentBase {
     /**
      * the typeface used for the labels
      */
+    @Nullable
     protected Typeface mTypeface = null;
 
     /**

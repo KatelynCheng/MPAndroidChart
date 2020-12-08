@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.charts;
 
+import androidx.annotation.Nullable;
+
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.ContentValues;
@@ -56,11 +58,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-/**
- * Baseclass of all Chart-Views.
- *
- * @author Philipp Jahoda
- */
 public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Entry>>> extends
         ViewGroup
         implements ChartInterface {
@@ -136,6 +133,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     /**
      * listener that is called when a value on the chart is selected
      */
+    @Nullable
     protected OnChartValueSelectedListener mSelectionListener;
 
     protected ChartTouchListener mChartTouchListener;
@@ -683,7 +681,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      * @param high         - the highlight object
      * @param callListener - call the listener
      */
-    public void highlightValue(Highlight high, boolean callListener) {
+    public void highlightValue(@Nullable Highlight high, boolean callListener) {
 
         Entry e = null;
 
@@ -1401,6 +1399,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      * @param which e.g. Chart.PAINT_LEGEND_LABEL
      * @return
      */
+    @Nullable
     public Paint getPaint(int which) {
         switch (which) {
             case PAINT_INFO:

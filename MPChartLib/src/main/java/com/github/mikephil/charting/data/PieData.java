@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.util.Log;
 
 import com.github.mikephil.charting.highlight.Highlight;
@@ -9,14 +11,6 @@ import com.github.mikephil.charting.interfaces.datasets.IPieDataSet;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A PieData object can only represent one DataSet. Unlike all other charts, the
- * legend labels of the PieChart are created from the x-values array, and not
- * from the DataSet labels. Each PieData object can only represent one
- * PieDataSet (multiple PieDataSets inside a single PieChart are not possible).
- *
- * @author Philipp Jahoda
- */
 public class PieData extends ChartData<IPieDataSet> {
 
     public PieData() {
@@ -66,12 +60,12 @@ public class PieData extends ChartData<IPieDataSet> {
      * @param index
      * @return
      */
-    @Override
+    @Override@Nullable
     public IPieDataSet getDataSetByIndex(int index) {
         return index == 0 ? getDataSet() : null;
     }
 
-    @Override
+    @Override@Nullable
     public IPieDataSet getDataSetByLabel(String label, boolean ignorecase) {
         return ignorecase ? label.equalsIgnoreCase(mDataSets.get(0).getLabel()) ? mDataSets.get(0)
                 : null : label.equals(mDataSets.get(0).getLabel()) ? mDataSets.get(0) : null;

@@ -1,23 +1,20 @@
 
 package com.github.mikephil.charting.formatter;
 
+import androidx.annotation.Nullable;
+
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.text.DecimalFormat;
 
-/**
- * Default formatter used for formatting values inside the chart. Uses a DecimalFormat with
- * pre-calculated number of digits (depending on max and min value).
- *
- * @author Philipp Jahoda
- */
 public class DefaultValueFormatter implements IValueFormatter
 {
 
     /**
      * DecimalFormat for formatting
      */
+    @Nullable
     protected DecimalFormat mFormat;
 
     protected int mDecimalDigits;

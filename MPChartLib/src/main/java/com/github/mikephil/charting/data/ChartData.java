@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Typeface;
 import android.util.Log;
 
@@ -12,12 +14,6 @@ import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Class that holds all relevant data that represents the chart. That involves
- * at least one (or more) DataSets, and an array of x-values.
- *
- * @author Philipp Jahoda
- */
 public abstract class ChartData<T extends IDataSet<? extends Entry>> {
 
     /**
@@ -351,6 +347,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
      * @param ignorecase
      * @return
      */
+    @Nullable
     public T getDataSetByLabel(String label, boolean ignorecase) {
 
         int index = getDataSetIndexByLabel(mDataSets, label, ignorecase);
@@ -565,6 +562,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
      * @param e
      * @return
      */
+    @Nullable
     public T getDataSetForEntry(Entry e) {
 
         if (e == null)
@@ -589,6 +587,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
      *
      * @return
      */
+    @Nullable
     public int[] getColors() {
 
         if (mDataSets == null)
@@ -632,6 +631,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
      *
      * @return
      */
+    @Nullable
     protected T getFirstLeft(List<T> sets) {
         for (T dataSet : sets) {
             if (dataSet.getAxisDependency() == AxisDependency.LEFT)
@@ -646,6 +646,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
      *
      * @return
      */
+    @Nullable
     public T getFirstRight(List<T> sets) {
         for (T dataSet : sets) {
             if (dataSet.getAxisDependency() == AxisDependency.RIGHT)
