@@ -220,7 +220,7 @@ public class Highlight {
      * @param h
      * @return
      */
-    public boolean equalTo(Highlight h) {
+    public boolean equalTo(@Nullable Highlight h) {
 
         if (h == null)
             return false;

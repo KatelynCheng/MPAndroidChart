@@ -91,6 +91,7 @@ public abstract class ComponentBase {
      *
      * @return
      */
+    @Nullable
     public Typeface getTypeface() {
         return mTypeface;
     }

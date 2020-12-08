@@ -45,6 +45,7 @@ public class RadarData extends ChartData<IRadarDataSet> {
         this.mLabels = Arrays.asList(labels);
     }
 
+    @Nullable
     public List<String> getLabels() {
         return mLabels;
     }

@@ -463,7 +463,7 @@ public abstract class Utils {
     }
 
     public static void velocityTrackerPointerUpCleanUpIfNecessary(MotionEvent ev,
-                                                                  VelocityTracker tracker) {
+                                                                  @Nullable VelocityTracker tracker) {
 
         // Check the dot product of current velocities.
         // If the pointer that left was opposing another velocity vector, clear.

@@ -239,7 +239,7 @@ public class LineDataSet extends LineRadarDataSet<Entry> implements ILineDataSet
         return mDashPathEffect == null ? false : true;
     }
 
-    @Override
+    @Override@Nullable
     public DashPathEffect getDashPathEffect() {
         return mDashPathEffect;
     }

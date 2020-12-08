@@ -365,7 +365,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
         mFormLineDashEffect = dashPathEffect;
     }
 
-    @Override
+    @Override@Nullable
     public DashPathEffect getFormLineDashEffect() {
         return mFormLineDashEffect;
     }

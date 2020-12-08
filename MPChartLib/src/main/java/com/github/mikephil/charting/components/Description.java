@@ -71,6 +71,7 @@ public class Description extends ComponentBase {
      *
      * @return
      */
+    @Nullable
     public MPPointF getPosition() {
         return mPosition;
     }

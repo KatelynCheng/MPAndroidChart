@@ -301,7 +301,7 @@ public abstract class DataSet<T extends Entry> extends BaseDataSet<T> {
         return null;
     }
 
-    @Override
+    @Override@Nullable
     public T getEntryForXValue(float xValue, float closestToY) {
         return getEntryForXValue(xValue, closestToY, Rounding.CLOSEST);
     }

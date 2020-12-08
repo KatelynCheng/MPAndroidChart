@@ -330,6 +330,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
      * @param highlight
      * @return the entry that is highlighted
      */
+    @Nullable
     public Entry getEntryForHighlight(Highlight highlight) {
         if (highlight.getDataSetIndex() >= mDataSets.size())
             return null;

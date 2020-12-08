@@ -14,7 +14,7 @@ public interface OnChartValueSelectedListener {
      * @param h The corresponding highlight object that contains information
      *          about the highlighted position such as dataSetIndex, ...
      */
-    void onValueSelected(@Nullable Entry e, Highlight h);
+    void onValueSelected(@Nullable Entry e, @Nullable Highlight h);
 
     /**
      * Called when nothing has been selected or an "un-select" has been made.

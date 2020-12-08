@@ -105,7 +105,7 @@ public abstract class LineScatterCandleRadarDataSet<T extends Entry> extends Bar
         return mHighlightDashPathEffect == null ? false : true;
     }
 
-    @Override
+    @Override@Nullable
     public DashPathEffect getDashPathEffectHighlight() {
         return mHighlightDashPathEffect;
     }

@@ -13,6 +13,7 @@ public class BarEntry extends Entry {
     /**
      * the values the stacked barchart holds
      */
+    @Nullable
     private float[] mYVals;
 
     /**

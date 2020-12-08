@@ -33,7 +33,7 @@ public class PieEntry extends Entry {
         this.label = label;
     }
 
-    public PieEntry(float value, String label, Object data) {
+    public PieEntry(float value, @Nullable String label, Object data) {
         super(0f, value, data);
         this.label = label;
     }
@@ -57,6 +57,7 @@ public class PieEntry extends Entry {
         return getY();
     }
 
+    @Nullable
     public String getLabel() {
         return label;
     }

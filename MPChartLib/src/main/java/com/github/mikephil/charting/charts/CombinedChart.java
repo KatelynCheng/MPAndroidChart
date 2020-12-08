@@ -209,6 +209,7 @@ public class CombinedChart extends BarLineChartBase<CombinedData> implements Com
      *
      * @return
      */
+    @Nullable
     public DrawOrder[] getDrawOrder() {
         return mDrawOrder;
     }
