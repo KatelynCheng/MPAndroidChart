@@ -268,7 +268,7 @@ public class BarEntry extends Entry {
      * @param vals
      * @return
      */
-    private static float calcSum(float[] vals) {
+    private static float calcSum(@Nullable float[] vals) {
 
         if (vals == null)
             return 0f;

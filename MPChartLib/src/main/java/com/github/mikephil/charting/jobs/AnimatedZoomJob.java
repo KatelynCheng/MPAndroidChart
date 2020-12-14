@@ -50,7 +50,7 @@ public class AnimatedZoomJob extends AnimatedViewPortJob implements Animator.Ani
     protected float xAxisRange;
 
     @SuppressLint("NewApi")
-    public AnimatedZoomJob(@Nullable ViewPortHandler viewPortHandler, @Nullable View v, @Nullable Transformer trans, YAxis axis, float xAxisRange, float scaleX, float scaleY, float xOrigin, float yOrigin, float zoomCenterX, float zoomCenterY, float zoomOriginX, float zoomOriginY, long duration) {
+    public AnimatedZoomJob(@Nullable ViewPortHandler viewPortHandler, @Nullable View v, @Nullable Transformer trans, @Nullable YAxis axis, float xAxisRange, float scaleX, float scaleY, float xOrigin, float yOrigin, float zoomCenterX, float zoomCenterY, float zoomOriginX, float zoomOriginY, long duration) {
         super(viewPortHandler, scaleX, scaleY, trans, v, xOrigin, yOrigin, duration);
 
         this.zoomCenterX = zoomCenterX;
