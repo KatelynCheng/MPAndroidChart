@@ -17,6 +17,9 @@ apply plugin: 'edu.ucr.cs.riple.plugin'
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
+diagnoseMode {
+    fixPath = "/tmp/NullAwayFix/diagnose.json"
+}
 
 autoFixMode {
     fixPath = "/tmp/NullAwayFix"
