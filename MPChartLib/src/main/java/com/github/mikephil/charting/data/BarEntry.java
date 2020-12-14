@@ -152,6 +152,7 @@ public class BarEntry extends Entry {
      *
      * @return
      */
+    @Nullable
     public float[] getYVals() {
         return mYVals;
     }
@@ -161,7 +162,7 @@ public class BarEntry extends Entry {
      *
      * @param vals
      */
-    public void setVals(float[] vals) {
+    public void setVals(@Nullable float[] vals) {
         setY(calcSum(vals));
         mYVals = vals;
         calcPosNegSum();

@@ -32,7 +32,7 @@ public class MoveViewJob extends ViewPortJob {
         pool.recycle(instance);
     }
 
-    public MoveViewJob(@Nullable ViewPortHandler viewPortHandler, float xValue, float yValue, @Nullable Transformer trans, View v) {
+    public MoveViewJob(@Nullable ViewPortHandler viewPortHandler, float xValue, float yValue, @Nullable Transformer trans, @Nullable View v) {
         super(viewPortHandler, xValue, yValue, trans, v);
     }
 

@@ -102,7 +102,7 @@ public class ScatterDataSet extends LineScatterCandleRadarDataSet<Entry> impleme
         mShapeRenderer = shapeRenderer;
     }
 
-    @Override
+    @Override@Nullable
     public IShapeRenderer getShapeRenderer() {
         return mShapeRenderer;
     }

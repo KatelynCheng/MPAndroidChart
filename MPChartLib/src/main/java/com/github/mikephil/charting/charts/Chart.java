@@ -1277,7 +1277,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         setMarker(v);
     }
 
-    @Deprecated
+    @Deprecated@Nullable
     public IMarker getMarkerView() {
         return getMarker();
     }
