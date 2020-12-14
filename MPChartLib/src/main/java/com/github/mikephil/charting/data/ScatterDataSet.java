@@ -28,6 +28,7 @@ public class ScatterDataSet extends LineScatterCandleRadarDataSet<Entry> impleme
     /**
      * Renderer responsible for rendering this DataSet, default: square
      */
+    @Nullable
     protected IShapeRenderer mShapeRenderer = new SquareShapeRenderer();
 
     /**

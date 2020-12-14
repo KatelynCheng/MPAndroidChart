@@ -102,6 +102,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      * paint object used for drawing the description text in the bottom right
      * corner of the chart
      */
+    @Nullable
     protected Paint mDescPaint;
 
     /**
@@ -1054,6 +1055,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      *
      * @return
      */
+    @Nullable
     public OnChartGestureListener getOnChartGestureListener() {
         return mGestureListener;
     }
@@ -1265,6 +1267,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      *
      * @return
      */
+    @Nullable
     public IMarker getMarker() {
         return mMarker;
     }
@@ -1294,6 +1297,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      *
      * @return
      */
+    @Nullable
     public Description getDescription() {
         return mDescription;
     }
@@ -1305,6 +1309,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      *
      * @return
      */
+    @Nullable
     public Legend getLegend() {
         return mLegend;
     }

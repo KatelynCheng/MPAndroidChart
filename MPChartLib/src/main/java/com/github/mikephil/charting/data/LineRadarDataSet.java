@@ -62,7 +62,7 @@ public abstract class LineRadarDataSet<T extends Entry> extends LineScatterCandl
         mFillDrawable = null;
     }
 
-    @Override
+    @Override@Nullable
     public Drawable getFillDrawable() {
         return mFillDrawable;
     }

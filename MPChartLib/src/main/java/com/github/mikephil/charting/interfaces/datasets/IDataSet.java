@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.interfaces.datasets;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.DashPathEffect;
 import android.graphics.PointF;
 import android.graphics.Typeface;
@@ -13,9 +15,6 @@ import com.github.mikephil.charting.utils.MPPointF;
 
 import java.util.List;
 
-/**
- * Created by Philipp Jahoda on 21/10/15.
- */
 public interface IDataSet<T extends Entry> {
 
     /** ###### ###### DATA RELATED METHODS ###### ###### */
@@ -145,7 +144,7 @@ public interface IDataSet<T extends Entry> {
      * @param e
      * @return
      */
-    int getEntryIndex(T e);
+    int getEntryIndex(@Nullable T e);
 
 
     /**

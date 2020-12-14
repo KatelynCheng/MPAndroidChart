@@ -84,6 +84,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     /**
      * paint object for the (by default) lightgrey background of the grid
      */
+    @Nullable
     protected Paint mGridBackgroundPaint;
 
     protected Paint mBorderPaint;
@@ -1025,6 +1026,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      *
      * @return
      */
+    @Nullable
     public OnDrawListener getDrawListener() {
         return mDrawListener;
     }

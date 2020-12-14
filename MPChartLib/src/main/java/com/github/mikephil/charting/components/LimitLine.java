@@ -148,6 +148,7 @@ public class LimitLine extends ComponentBase {
      * 
      * @return
      */
+    @Nullable
     public DashPathEffect getDashPathEffect() {
         return mDashPathEffect;
     }

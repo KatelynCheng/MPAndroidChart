@@ -64,6 +64,7 @@ public abstract class BaseEntry {
      *
      * @return
      */
+    @Nullable
     public Drawable getIcon() {
         return mIcon;
     }

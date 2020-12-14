@@ -232,6 +232,7 @@ public class Legend extends ComponentBase {
         return max;
     }
 
+    @Nullable
     public LegendEntry[] getExtraEntries() {
 
         return mExtraEntries;
@@ -475,6 +476,7 @@ public class Legend extends ComponentBase {
     /**
      * @return The line dash path effect used for shapes that consist of lines.
      */
+    @Nullable
     public DashPathEffect getFormLineDashEffect() {
         return mFormLineDashEffect;
     }

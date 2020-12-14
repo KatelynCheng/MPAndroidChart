@@ -120,22 +120,27 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
         }
     }
 
+    @Nullable
     public BubbleData getBubbleData() {
         return mBubbleData;
     }
 
+    @Nullable
     public LineData getLineData() {
         return mLineData;
     }
 
+    @Nullable
     public BarData getBarData() {
         return mBarData;
     }
 
+    @Nullable
     public ScatterData getScatterData() {
         return mScatterData;
     }
 
+    @Nullable
     public CandleData getCandleData() {
         return mCandleData;
     }

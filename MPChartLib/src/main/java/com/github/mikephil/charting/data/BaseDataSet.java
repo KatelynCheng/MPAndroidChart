@@ -283,7 +283,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
             mValueFormatter = f;
     }
 
-    @Override
+    @Override@Nullable
     public IValueFormatter getValueFormatter() {
         if (needsFormatter())
             return Utils.getDefaultValueFormatter();
@@ -326,7 +326,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
         return mValueColors.get(index % mValueColors.size());
     }
 
-    @Override
+    @Override@Nullable
     public Typeface getValueTypeface() {
         return mValueTypeface;
     }
@@ -367,7 +367,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
         mFormLineDashEffect = dashPathEffect;
     }
 
-    @Override
+    @Override@Nullable
     public DashPathEffect getFormLineDashEffect() {
         return mFormLineDashEffect;
     }
