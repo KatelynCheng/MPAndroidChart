@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.util.Log;
 
 import com.github.mikephil.charting.components.YAxis;
@@ -10,18 +12,21 @@ import com.github.mikephil.charting.interfaces.datasets.IBarLineScatterCandleBub
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Data object that allows the combination of Line-, Bar-, Scatter-, Bubble- and
- * CandleData. Used in the CombinedChart class.
- *
- * @author Philipp Jahoda
- */
 public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatterCandleBubbleDataSet<? extends Entry>> {
 
+    @Nullable
     private LineData mLineData;
+
+    @Nullable
     private BarData mBarData;
+
+    @Nullable
     private ScatterData mScatterData;
+
+    @Nullable
     private CandleData mCandleData;
+
+    @Nullable
     private BubbleData mBubbleData;
 
     public CombinedData() {
@@ -183,7 +188,7 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
      * @param highlight
      * @return the entry that is highlighted
      */
-    @Override
+    @Override@Nullable
     public Entry getEntryForHighlight(Highlight highlight) {
 
         if (highlight.getDataIndex() >= getAllData().size())
@@ -213,6 +218,7 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
      * @param highlight current highlight
      * @return dataset related to highlight
      */
+    @Nullable
     public IBarLineScatterCandleBubbleDataSet<? extends Entry> getDataSetByHighlight(Highlight highlight) {
         if (highlight.getDataIndex() >= getAllData().size())
             return null;

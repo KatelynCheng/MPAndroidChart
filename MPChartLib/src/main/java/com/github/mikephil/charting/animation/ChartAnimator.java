@@ -1,20 +1,17 @@
 package com.github.mikephil.charting.animation;
 
+import androidx.annotation.Nullable;
+
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import androidx.annotation.RequiresApi;
 
 import com.github.mikephil.charting.animation.Easing.EasingFunction;
 
-/**
- * Object responsible for all animations in the Chart. Animations require API level 11.
- *
- * @author Philipp Jahoda
- * @author Mick Ashton
- */
 public class ChartAnimator {
 
     /** object that is updated upon animation update */
+    @Nullable
     private AnimatorUpdateListener mListener;
 
     /** The phase of drawn values on the y-axis. 0 - 1 */

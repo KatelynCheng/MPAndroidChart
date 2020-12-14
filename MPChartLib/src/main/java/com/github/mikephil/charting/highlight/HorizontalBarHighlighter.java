@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.highlight;
 
+import androidx.annotation.Nullable;
+
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.data.Entry;
@@ -11,16 +13,13 @@ import com.github.mikephil.charting.utils.MPPointD;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Philipp Jahoda on 22/07/15.
- */
 public class HorizontalBarHighlighter extends BarHighlighter {
 
 	public HorizontalBarHighlighter(BarDataProvider chart) {
 		super(chart);
 	}
 
-	@Override
+	@Override@Nullable
 	public Highlight getHighlight(float x, float y) {
 
 		BarData barData = mChart.getBarData();

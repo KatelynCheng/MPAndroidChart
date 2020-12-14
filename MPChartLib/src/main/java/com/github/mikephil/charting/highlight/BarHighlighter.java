@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.highlight;
 
+import androidx.annotation.Nullable;
+
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.BarLineScatterCandleBubbleData;
@@ -7,16 +9,13 @@ import com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.MPPointD;
 
-/**
- * Created by Philipp Jahoda on 22/07/15.
- */
 public class BarHighlighter extends ChartHighlighter<BarDataProvider> {
 
     public BarHighlighter(BarDataProvider chart) {
         super(chart);
     }
 
-    @Override
+    @Override@Nullable
     public Highlight getHighlight(float x, float y) {
         Highlight high = super.getHighlight(x, y);
 
@@ -52,6 +51,7 @@ public class BarHighlighter extends ChartHighlighter<BarDataProvider> {
      * @param yVal
      * @return
      */
+    @Nullable
     public Highlight getStackedHighlight(Highlight high, IBarDataSet set, float xVal, float yVal) {
 
         BarEntry entry = set.getEntryForXValue(xVal, yVal);

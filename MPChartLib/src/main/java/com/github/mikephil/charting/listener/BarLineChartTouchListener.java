@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.listener;
 
+import androidx.annotation.Nullable;
+
 import android.annotation.SuppressLint;
 import android.graphics.Matrix;
 import android.graphics.PointF;
@@ -20,12 +22,6 @@ import com.github.mikephil.charting.utils.MPPointF;
 import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
-/**
- * TouchListener for Bar-, Line-, Scatter- and CandleStickChart with handles all
- * touch interaction. Longpress == Zoom out. Double-Tap == Zoom in.
- *
- * @author Philipp Jahoda
- */
 public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBase<? extends BarLineScatterCandleBubbleData<?
         extends IBarLineScatterCandleBubbleDataSet<? extends Entry>>>> {
 
@@ -53,11 +49,13 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
     private float mSavedYDist = 1f;
     private float mSavedDist = 1f;
 
+    @Nullable
     private IDataSet mClosestDataSetToTouch;
 
     /**
      * used for tracking velocity of dragging
      */
+    @Nullable
     private VelocityTracker mVelocityTracker;
 
     private long mDecelerationLastTime = 0;

@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.components;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.util.Log;
@@ -12,16 +14,12 @@ import com.github.mikephil.charting.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Base-class of all axes (previously called labels).
- *
- * @author Philipp Jahoda
- */
 public abstract class AxisBase extends ComponentBase {
 
     /**
      * custom formatter that is used instead of the auto-formatter if set
      */
+    @Nullable
     protected IAxisValueFormatter mAxisValueFormatter;
 
     private int mGridColor = Color.GRAY;
@@ -95,11 +93,13 @@ public abstract class AxisBase extends ComponentBase {
     /**
      * the path effect of the axis line that makes dashed lines possible
      */
+    @Nullable
     private DashPathEffect mAxisLineDashPathEffect = null;
 
     /**
      * the path effect of the grid lines that makes dashed lines possible
      */
+    @Nullable
     private DashPathEffect mGridDashPathEffect = null;
 
     /**

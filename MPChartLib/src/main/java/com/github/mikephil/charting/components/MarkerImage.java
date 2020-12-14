@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.components;
 
+import androidx.annotation.Nullable;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -18,12 +20,6 @@ import com.github.mikephil.charting.utils.MPPointF;
 
 import java.lang.ref.WeakReference;
 
-/**
- * View that can be displayed when selecting values in the chart. Extend this class to provide custom layouts for your
- * markers.
- *
- * @author Philipp Jahoda
- */
 public class MarkerImage implements IMarker {
 
     private Context mContext;
@@ -31,6 +27,8 @@ public class MarkerImage implements IMarker {
 
     private MPPointF mOffset = new MPPointF();
     private MPPointF mOffset2 = new MPPointF();
+
+    @Nullable
     private WeakReference<Chart> mWeakChart;
 
     private FSize mSize = new FSize();
@@ -89,6 +87,7 @@ public class MarkerImage implements IMarker {
         mWeakChart = new WeakReference<>(chart);
     }
 
+    @Nullable
     public Chart getChartView() {
         return mWeakChart == null ? null : mWeakChart.get();
     }

@@ -1,6 +1,8 @@
 
 package com.github.mikephil.charting.components;
 
+import androidx.annotation.Nullable;
+
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
@@ -8,13 +10,6 @@ import android.graphics.Typeface;
 
 import com.github.mikephil.charting.utils.Utils;
 
-/**
- * The limit line is an additional feature for all Line-, Bar- and
- * ScatterCharts. It allows the displaying of an additional line in the chart
- * that marks a certain maximum / limit on the specified axis (x- or y-axis).
- * 
- * @author Philipp Jahoda
- */
 public class LimitLine extends ComponentBase {
 
     /** limit / maximum (the y-value or xIndex) */
@@ -33,6 +28,7 @@ public class LimitLine extends ComponentBase {
     private String mLabel = "";
 
     /** the path effect of this LimitLine that makes dashed lines possible */
+    @Nullable
     private DashPathEffect mDashPathEffect = null;
 
     /** indicates the position of the LimitLine label */

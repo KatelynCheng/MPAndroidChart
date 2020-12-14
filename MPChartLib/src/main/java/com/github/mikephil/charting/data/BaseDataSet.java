@@ -1,5 +1,7 @@
 package com.github.mikephil.charting.data;
 
+import androidx.annotation.Nullable;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -16,11 +18,6 @@ import com.github.mikephil.charting.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Philipp Jahoda on 21/10/15.
- * This is the base dataset of all DataSets. It's purpose is to implement critical methods
- * provided by the IDataSet interface.
- */
 public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     /**
@@ -51,16 +48,20 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
     /**
      * custom formatter that is used instead of the auto-formatter if set
      */
+    @Nullable
     protected transient IValueFormatter mValueFormatter;
 
     /**
      * the typeface used for the value text
      */
+    @Nullable
     protected Typeface mValueTypeface;
 
     private Legend.LegendForm mForm = Legend.LegendForm.DEFAULT;
     private float mFormSize = Float.NaN;
     private float mFormLineWidth = Float.NaN;
+
+    @Nullable
     private DashPathEffect mFormLineDashEffect = null;
 
     /**
